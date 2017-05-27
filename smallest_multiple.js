@@ -12,8 +12,11 @@ module.exports = function ( ceiling ) {
   var arr = [];
   var counter = 1;
 
+  //to make it run faster:
+  //increment by ceiling * (ceiling - 1)
+
   while(smallestMultiple === -1) {
-    for(var i = 1; i < ceiling; i++) {
+    for(var i = 1; i <= ceiling; i++) {
       arr.push(counter % i);
     }
     if(arr.every(sameCheck)) {
